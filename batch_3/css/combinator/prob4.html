@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* sibling combinator  */
+
+        
+        #main + h2{
+           color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1 >I am heading 1</h1>
+        <div>
+            <h1>I am heading 3</h1>
+            <div>
+                <h1 class="heading">I am heading 4</h1>
+            </div>
+        </div>
+    </div>
+    
+    <h2>I am heading 5</h2>
+    <h1>I am heading 2</h1>
+  
+    <h1>I am heading 2</h1>
+    <h1>I am heading 2</h1>
+    <h1>I am heading 2</h1>
+
+
+    <div>
+        <h1>I am heading 3</h1>
+        <div>
+            <h1>I am heading 4</h1>
+        </div>
+    </div>
+</body>
+</html>
