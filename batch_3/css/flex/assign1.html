@@ -3,8 +3,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #navbar{
+            height: 60px;
+            /* border: 2px solid red; */
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .logo{
+            /* border: 2px solid grey; */
+            width: 200px;
+        }
+        
+        #nav{
+            /* border: 2px solid green; */
+            width: 700px;
+            font-size: 24px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+     
+        #main{
+            height: 500px;
+            margin-top: 20px;
+            /* border: 5px solid red; */
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+        #left{
+            width: 45%;
+            height: 100%;
+            /* border: 5px solid black; */
+        }
+        #right{
+            width: 45%;
+            height: 100%;
+            /* border: 5px solid rgb(22, 13, 183); */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+           
+        }
+
+        #right>div{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 45%;
+            height: 230px;
+           text-align: center;
+
+        }
+        #right>div>img{
+          
+            width: 100px;
+
+        }
+
+
+
+    </style>
 </head>
 <body>
-    
+    <div id="navbar">
+        <img class="logo" src="https://pwebassets.paytm.com/commonwebassets/paytmweb/header/images/logo_new.svg" alt="">
+        
+        <div id="nav">
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+        </div>
+    </div>
+
+
+    <div id="main">
+        <div id="left"></div>
+        <div id="right">
+            <div>
+                <img src="https://assetscdn1.paytm.com/images/catalog/view_item/2988612/24720938495236796.png" alt="">
+                <h3>Top Qulity Contant</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            </div>
+            <div>
+                <img src="https://assetscdn1.paytm.com/images/catalog/view_item/2988612/24720938495236796.png" alt="">
+                <h3>Top Qulity Contant</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            </div>
+            <div>
+                <img src="https://assetscdn1.paytm.com/images/catalog/view_item/2988612/24720938495236796.png" alt="">
+                <h3>Top Qulity Contant</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            </div>
+            <div>
+                <img src="https://assetscdn1.paytm.com/images/catalog/view_item/2988612/24720938495236796.png" alt="">
+                <h3>Top Qulity Contant</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
