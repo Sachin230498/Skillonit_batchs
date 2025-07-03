@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+
+
+        /* Media Query for small screen or mobile */
+        @media all and (min-width:320px) and (max-width:480px){
+            body{
+                background-color: red;
+            
+            
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+
+         /* Media Query for medium screen or tablet */
+         @media all and (min-width:481px) and (max-width:768px){
+            body{
+                background-color: rgb(0, 255, 4);
+            }
+
+            h1{
+                color: rgb(255, 0, 238);
+                font-size: 50px;
+            }
+        }
+
+           /* Media Query for medium screen or tablet */
+           @media all and (min-width:769px) and (max-width:1000px){
+            body{
+                background-color: rgb(246, 255, 0);
+            }
+            h1{
+              color: red;
+              text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World !</h1>
+</body>
+</html>
+
+
+<!-- 
+Mobile Screen - 320px to 480px
+Table Screen  - 480px to 768px
+Large Screen  - 768px to above
+ -->
