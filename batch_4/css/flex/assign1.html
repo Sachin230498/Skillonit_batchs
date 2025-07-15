@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            height: 60px;
+            border: 2px solid red;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+        
+
+        }
+
+        .navbar{
+            font-size: 25px;
+            /* border: 2px solid; */
+            width: 500px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #nav>img{
+            width: 200px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        /* Inner div style */
+
+        #inner{
+            height: 600px;
+            border: 5px solid;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #left{
+            width: 45%;
+            height: 100%;
+            border: 5px solid red;
+        }
+        #right{
+            width: 45%;
+            height: 100%;
+            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-content: space-evenly;
+        }
+
+        #right>div{
+            width: 40%;
+            height: 250px;
+            /* border: 5px solid yellow; */
+            padding: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        }
+
+        #right>div>img{
+            width: 100px;
+        }
+        #right p{
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <img src="https://pwebassets.paytm.com/commonwebassets/paytmweb/header/images/logo_new.svg" alt="">
+
+        <div class="navbar">
+
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+
+        </div>
+    </div>
+
+    <!-- inner content html -->
+    <div id="inner">
+        <div id="left"></div>
+        <div id="right">
+            <div>
+                <img src="https://assetscdn1.paytm.com/images/catalog/view_item/2988612/26703374140606265.png" alt="">
+                <h2>Top Quaity Content</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate.</p>
+            </div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+
+    </div>
+</body>
+</html>
