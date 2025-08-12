@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">I am heading by id</h1>
+    <h1 class="heading">I am heading by class</h1>
+    <h1 >I am heading by tag</h1>
+</body>
+<script>
+    let head = document.getElementById("head")
+    let heading = document.getElementsByClassName("heading")
+    let h1 = document.getElementsByTagName("h1")
+
+    // console.log(h1)
+    // console.log(head)
+    // console.log(heading)
+
+    // head.style.color = "red"
+
+    // heading[0].style.color = "green"
+
+    // document.querySelector
+    //  let x = document.querySelector(".heading")
+    //  console.log(x)
+
+    // document.querySelectorAll
+    let a = document.querySelectorAll("h1")
+    console.log(a)
+</script>
+</html>

@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create Html Element</h1>
+    <div id="main"></div>
+</body>
+<script>
+    let main = document.getElementById("main");
+    // console.log(main)
+
+    // document.createElement()
+
+    let x = document.createElement("h1");
+    x.innerText = "Hello"    
+
+    let para = document.createElement("p");
+    // console.log(x)
+    para.innerText = "I am para"
+
+    // append
+
+    main.append(x,para)
+  
+</script>
+</html>

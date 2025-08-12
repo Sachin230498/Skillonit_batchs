@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #head {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="head">Hello</h1>
+
+    <p id="para">I am para</p>
+
+    <h2 id="h2"></h2>
+
+    <button onclick="getData()" >getData</button>
+    <button onclick="remove()" >Remove Data</button>
+  </body>
+  <script>
+    // how to access html el
+    // document.getElementById
+
+    let x = document.getElementById("head");
+    let p = document.getElementById("para");
+    let head = document.getElementById("h2");
+    console.log(head);
+
+    // innerText or textContent
+    // console.log(x.textContent)
+
+    x.innerText = "Bye  Bye";
+
+
+    function getData(){
+        // console.log("hello")
+        head.innerText = "hello"
+    }
+
+    function remove(){
+        head.innerText = "";
+    }
+  </script>
+</html>

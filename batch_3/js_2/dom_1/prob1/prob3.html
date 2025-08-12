@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="name" type="text" placeholder="enter name"/>
+    <br /><br />
+    <input id="password" type="password" placeholder="enter password" />
+    <br /><br />
+    <button onclick="login()" >login</button>
+<br><br>
+    <b>Data</b>
+
+    <h1 id="getName"></h1>
+    <h1 id="getPass"></h1>
+  </body>
+  <script>
+    let name = document.getElementById("name")
+    let pass = document.getElementById("password")
+    let getpass = document.getElementById("getPass")
+    let getname = document.getElementById("getName")
+
+    function login(){
+        // console.log(name.value)
+        // console.log(pass.value)
+      getname.innerText = name.value
+      getpass.innerText = pass.value
+    }
+    
+  </script>
+
+</html>

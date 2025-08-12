@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+    <h1 id="head1">I am heading -1 </h1>
+    <h2 class="heading">I am heading 2</h2>
+    <h3 class="heading">I am heading 3</h3>
+</body>
+<script>
+    let a = document.getElementById("head1")
+    // console.log(a)
+
+    a.style.color = "red";
+    a.style.backgroundColor = "yellow"
+
+    let x = document.getElementsByClassName("heading")
+    // x[1].style.color = "red"
+    // x[0].style.color = "red"
+
+    for(let i=0;i<x.length;i++){
+        // console.log(x[i])
+        x[i].style.color = "blue"
+    }
+</script>
+</html>

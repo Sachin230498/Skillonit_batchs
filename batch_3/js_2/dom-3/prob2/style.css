@@ -1,0 +1,13 @@
+#main{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+#main img{
+    width: 100%;
+}
+
+#main div{
+    border: 2px solid;
+}
