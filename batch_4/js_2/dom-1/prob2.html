@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dom-1</h1>
+    <h2 id="head">Hello</h2>
+    <button onclick="textchange()">Change text</button>
+    <button onclick="textchange1()">Change again</button>
+</body>
+<script>
+
+     let head = document.getElementById("head")
+    //  console.log()
+  
+
+    function textchange(){
+          head.innerText = "bye"
+    }
+    function textchange1(){
+          head.innerText = "Hello"
+    }
+
+</script>
+</html>

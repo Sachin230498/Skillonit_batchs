@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Login form</h1>
+    <br /><br />
+
+    <input type="text" placeholder="enter name" id="name" value="" />
+    <br>
+    <input type="text" placeholder="enter pass" id="pass" />
+    <br>
+    <select id="gender">
+        <option value="m">Male</option>
+        <option value="f">Female</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="getData()"> Login</button>
+    <br>
+    <hr>
+
+    <h1 id="n"></h1>
+    <h1 id="p"></h1>
+    <h1 id="g"></h1>
+  </body>
+  <script>
+    let name = document.getElementById("name");
+    let pass = document.getElementById("pass");
+    let gen = document.getElementById("gender");
+    let n = document.getElementById("n");
+    let p = document.getElementById("p");
+    let g = document.getElementById("g");
+
+    // console.log()
+
+    // n.innerText = "bye"
+
+    function getData(){
+        // console.log(name.value)
+        // console.log(pass.value)
+        // console.log(gen.value)
+
+        n.innerText = name.value
+        p.innerText = pass.value
+        g.innerText = gen.value
+    }
+
+    // console.log(pass)
+  </script>
+</html>

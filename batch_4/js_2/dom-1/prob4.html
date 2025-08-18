@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="first" type="number" placeholder="enter 1st number" /><br />
+    <input id="second" type="number" placeholder="enter 2nd number" />
+    <br /><br />
+    <button onclick="add()">Add</button>
+    <button>Sub</button>
+    <button>Divide</button>
+    <button>Multiply</button>
+  </body>
+
+  <script>
+     let first = document.getElementById("first")
+     let second = document.getElementById("second")
+
+     function add(){
+        // console.log(first.value)
+        // console.log(second.value)
+        let a =  Number(first.value)
+        let b =  Number(second.value)
+
+        let x = a+b
+        // console.log(x)
+        alert(x)
+     }
+
+
+    //  Number("25")
+
+    // let a = "5"
+
+    // Number(a)
+    // +a
+  </script>
+</html>
