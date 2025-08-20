@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dom</h1>
+    <br><br><br>
+    <input type="number" placeholder="enter 1st number" id="1st">
+    <input type="number" placeholder="enter 2nd number" id="2nd"><br>
+  
+    <br>
+    <button onclick="add()">Add</button>
+    <button onclick="sub()">Sub</button>
+    <button onclick="Divide()">Divide</button>
+    <button onclick="Multiply()">Multiply</button>
+
+</body>
+<script>
+    // console.log("hello")
+
+    let a = document.getElementById("1st");
+    let b = document.getElementById("2nd");
+
+
+
+    function add(){     
+        let x = Number(a.value)+Number(b.value)
+         alert(x)
+    }
+    function sub(){     
+        let x = Number(a.value)-Number(b.value)
+         alert(x)
+    }
+    function Divide(){     
+        let x = Number(a.value)/Number(b.value)
+         alert(x)
+    }
+    function Multiply(){     
+        let x = Number(a.value)*Number(b.value)
+         alert(x)
+    }
+
+
+
+
+    // let x = "rahul"
+    // let y = "kumar"
+    // let c = 4
+    // let d = "5"
+
+    // console.log(typeof +d)
+
+    // console.log(c+d)  //concatination  "45"
+
+    // console.log(x+y)  //concatination
+
+    
+
+
+</script>
+</html>

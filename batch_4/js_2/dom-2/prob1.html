@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .heading{
+            border: 5px solid;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 id="head" >I am heading</h1>
+    <button onclick="changecolor()">Change Color</button>
+  </body>
+  <script>
+    let head = document.getElementById("head");
+    // console.log(head)
+
+    function changecolor() {
+      head.style.color = "red";
+      head.style.backgroundColor = "yellow";
+    }
+
+    head.setAttribute("class", "heading")
+
+    console.log(head)
+
+
+  </script>
+</html>
