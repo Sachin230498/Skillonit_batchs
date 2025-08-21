@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #main>div{
+            width: 400px;
+            height: 200px;
+            border: 2px solid;
+            margin: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input id="name" type="text" placeholder="enter your name" />
+      <br><br>
+      <input id="pass" type="text" placeholder="enter your password" />
+      <br><br>
+      <input type="submit" value="signup" />
+    </form>
+
+    <br><br><hr><br><br>
+
+    <div id="main"></div>
+  </body>
+<script>
+    let name = document.getElementById("name")
+    let pass = document.getElementById("pass")
+    let form = document.querySelector("form")
+    let main = document.querySelector("#main")
+     let arr = [];
+    form.addEventListener("submit",getData)
+ 
+    function getData(){
+
+        event.preventDefault()
+
+        let obj = {
+            name:name.value,
+            pass:pass.value
+        }
+
+      
+         arr.push(obj)
+
+
+     main.innerHTML = "";
+       for(let i=0;i<arr.length;i++){
+            let n = document.createElement("h1")
+            n.innerText = arr[i].name;
+            let p = document.createElement("h2")
+            p.innerText = arr[i].pass;
+
+           let div = document.createElement("div")
+
+           div.append(n,p)
+           main.append(div) 
+        }
+       
+    }
+
+
+
+
+    // let array = [12,45,{ a:1,b:2}]
+
+    // let obj = {
+    //     c:1,
+    //     d:2
+    // }
+
+    // array.push(obj)
+
+    // console.log(array)
+</script>
+</html>

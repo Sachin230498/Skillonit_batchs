@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        #main>div{
+           box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .cat{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+</body>
+<script>
+    let main = document.getElementById("main");
+   
+    let name = ["Anushka", "Shradha", "Pallavi", "Kanchan", "Tushar", "Vivek", "Harsh"];
+    let marks = [77,78,89,87,90,95,66] 
+
+
+
+    for(let i =0;i<name.length;i++){
+    let head = document.createElement("h1");
+    head.innerText = name[i]
+    let para = document.createElement("p")
+    para.innerText = marks[i]
+    let img = document.createElement("img")
+    img.setAttribute("class", "cat")
+    img.src = "https://cdn.pixabay.com/photo/2025/08/03/15/10/cat-9752539_1280.jpg"
+
+    let div = document.createElement("div")
+
+
+       div.append(img,head,para)
+
+    //    console.log(div)
+    main.append(div)
+    }
+
+
+
+</script>
+</html>

@@ -1,0 +1,92 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      #main > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      .cat {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main"></div>
+  </body>
+  <script>
+    let main = document.getElementById("main");
+
+    // let name = [
+    //   "Anushka",
+    //   "Shradha",
+    //   "Pallavi",
+    //   "Kanchan",
+    //   "Tushar",
+    //   "Vivek",
+    //   "Harsh",
+    // ];
+    // let marks = [77, 78, 89, 87, 90, 95, 66];
+    // let color = ["red", "yellow", "pink", "orange", "purple", "green", "blue"];
+
+    let data = [
+      {
+        name: "Anushka",
+        marks: 88,
+        color: "purple",
+      },
+      {
+      name: "shraddha",
+      marks: 85,
+      color: "orange",
+    },
+      {
+      name: "kanchan",
+      marks: 88,
+      color: "red",
+    },
+      {
+      name: "pallavi",
+      marks: 82,
+      color: "green",
+    },
+      {
+      name: "tushar",
+      marks: 84,
+      color: "blue",
+    },
+    ];
+
+
+
+// console.log(data[0].name)
+   
+
+    for (let i = 0; i < data.length; i++) {
+      let head = document.createElement("h1");
+      head.innerText = data[i].name;
+      head.style.color = data[i].color;
+      let para = document.createElement("p");
+      para.innerText = data[i].marks;
+      let img = document.createElement("img");
+      img.setAttribute("class", "cat");
+      img.src =
+        "https://cdn.pixabay.com/photo/2025/08/03/15/10/cat-9752539_1280.jpg";
+
+      let div = document.createElement("div");
+
+      div.append(img, head, para);
+
+      //    console.log(div)
+      main.append(div);
+    }
+  </script>
+</html>

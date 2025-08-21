@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main"></div>
+  </body>
+  <script>
+    let main = document.getElementById("main");
+    let name = ["Anushka", "Shradha", "Pallavi", "Kanchan", "Tushar"];
+    let marks = [77,78,89,87,90]
+
+    for (let i = 0; i<name.length; i++) {
+      let head = document.createElement("h1");
+      head.innerText = name[i]
+
+      let mark= document.createElement("h2")
+      mark.innerText = marks[i]
+
+      let div = document.createElement("div")
+
+       div.append(head,mark);
+
+       main.append(div)
+    }
+
+
+
+    // console.log(head);
+
+   
+  </script>
+</html>
