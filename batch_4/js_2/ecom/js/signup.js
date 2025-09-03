@@ -19,7 +19,7 @@ function signup(){
 
    localStorage.setItem("singup_arr", JSON.stringify(signup_arr))
    alert("User Ragistered")
-    window.location.href = "http://127.0.0.1:5500/ecom/html/login.html";
+    window.location.href = "../html/login.html";
 }
 
 
