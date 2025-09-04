@@ -2,10 +2,17 @@ let form = document.querySelector("form")
 let tbody = document.querySelector("tbody")
 let t = document.getElementById("task")
 let p= document.getElementById("priority");
-
 form.addEventListener("submit", getData)
 
- let todo_arr = [];
+let todo_arr = JSON.parse(localStorage.getItem("todo_arr")) || []
+// if(localStorage.getItem("todo_arr")==null){
+// todo_arr = [];
+// }else{
+//     todo_arr = JSON.parse(localStorage.getItem("todo_arr"));
+// }
+
+
+ display(todo_arr);
 
 function getData(){
     event.preventDefault()
@@ -20,7 +27,8 @@ function getData(){
    }
 
    todo_arr.push(obj) 
-   
+
+   localStorage.setItem("todo_arr" , JSON.stringify(todo_arr))
    display(todo_arr);
 }
 
@@ -57,7 +65,9 @@ function delfun(){
 }
 
 
+let a = localStorage.getItem("abc")
 
+console.log(a)
 
 
    
