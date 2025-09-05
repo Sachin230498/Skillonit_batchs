@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            height: 80px;
+            border: 2px solid;
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo{
+            width: 200px;
+        }
+
+        .nav{
+            font-size: 25px;
+            /* border: 2px solid red; */
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        #main{
+            height: 600px;
+            border: 2px solid;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #left{
+            width: 45%;
+            height: 90%;
+            border: 3px solid red;
+        }
+        #right{
+            width: 45%;
+            height: 90%;
+            border: 3px solid rgb(30, 0, 255);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #right>div{
+            width: 35%;
+            height: 45%;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+   <nav id="navbar">
+       <img class="logo" src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg" alt="">
+       
+       <div class="nav">
+        <a href="">Home</a>
+        <a href="">Home</a>
+        <a href="">Home</a>
+        <a href="">Home</a>
+        <a href="">Home</a>
+       </div>
+  
+    </nav>
+
+    <!-- middle section -->
+
+    <div id="main">
+       <div id="left"></div>
+       <div id="right">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+       </div>
+    </div>
+
+   
+</body>
+</html>
