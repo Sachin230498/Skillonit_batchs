@@ -6,6 +6,8 @@ let navbar = document.getElementById("navbar")
 let products = JSON.parse(localStorage.getItem("products"));
 // console.log(navbar)
 // console.log(products)
+let cart_arr = JSON.parse(localStorage.getItem("cartData")) || [];
+
 display(products)
 
 if(username != null){
@@ -15,7 +17,7 @@ let name = document.createElement("h4")
 name.innerText = username
 let cart = document.createElement("h4")
 cart.addEventListener("click", function(){
-     window.location.href = "../html/cart.html";
+     window.location.href = "./html/cart.html";
 })
 cart.innerText = "cart"
 let logout = document.createElement("button")
@@ -46,6 +48,30 @@ product.map(function(el){
 
     let cartbtn =document.createElement("button")
     cartbtn.innerText = "Add to Cart"
+    cartbtn.addEventListener("click",function(){
+      let alreadyInCart = false;
+      for(let i=0;i<cart_arr.length;i++){
+        if(cart_arr[i].id ==el.id){
+            alreadyInCart = true;
+            break;
+        }
+      }
+   
+      if(alreadyInCart){
+        window.location.href = "../html/cart.html";
+      }else{
+        cart_arr.push(el);
+        localStorage.setItem("cartData" , JSON.stringify(cart_arr));
+        alert("Product is Added to cart")
+        cartbtn.innerText = "Go to cart"
+      }
+  
+    })
+
+
+
+
+
 
     let div = document.createElement("div")
 
@@ -55,17 +81,5 @@ product.map(function(el){
 })
 }
 
-// lestate 5;
-
-// let b;
 
 
-// if(!b){
-//     console.log("hello")
-// }
-
-// if(b==undefined){
-//     console.log("hello")
-// }
-
-// console.log(b)

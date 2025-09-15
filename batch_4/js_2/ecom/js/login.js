@@ -15,8 +15,8 @@ function login() {
   let flag = false;
 
   signup_arr.map(function(el){
-   if(login_obj.username == el.username){
-      if(login_obj.password==el.password){
+   if(login_obj.username === el.username){
+      if(login_obj.password===el.password){
          flag = true;
          localStorage.setItem("login_data", el.name)
       }else{
@@ -25,15 +25,16 @@ function login() {
    }
   })
 
-  if(flag == true){
+  if(flag === true){
     console.log("login")
+    alert("Login succesfull");
+    window.location.href = "../index.html";
   }else if(flag == "wrong"){
-    console.log("Wrong password")
+    alert("Wrong password")
   }else{
-    console.log("Wrong credential")
+    alert("Wrong credential")
   }
 
-  alert("Login succesfull")
-      window.location.href = "../index.html";
+
 
 }
