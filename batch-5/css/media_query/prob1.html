@@ -1,0 +1,139 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://cdn.pixabay.com/photo/2025/09/03/13/33/cat-9813484_1280.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+      #main {
+        border: 5px solid;
+        display: grid;
+        font-size: 30px;
+        padding: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px 20px;
+      }
+
+      #main > div {
+        border: 4px solid red;
+      }
+      #main > div > img {
+        width: 100%;
+      }
+
+      /* laptop screen */
+
+      @media all and (min-width: 768px) and (max-width: 1000px) {
+        #main {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+           #main > div {
+        border: 4px solid rgb(38, 0, 255);
+      }
+      }
+
+          /* tablet screen */
+
+      @media all and (min-width: 480px) and (max-width: 767px) {
+        #main {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+           /* mobile screen */
+
+      @media all and (min-width: 320px) and (max-width: 479px) {
+        #main {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="main">
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.pixabay.com/photo/2025/06/08/16/06/horse-9648183_1280.jpg"
+          alt=""
+        />
+      </div>
+    </div> -->
+  </body>
+</html>

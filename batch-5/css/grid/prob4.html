@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grid{
+            border: 3px solid;
+            font-size: 30px;
+            font-weight: bold;
+            display: grid;
+            /* grid-template-columns: repeat(50,10%); */
+            /* fraction 1fr */
+            /* gap: 20px; */
+            grid-template-columns: repeat(50,1fr);
+            gap: 20px;
+        }
+
+        #grid>div{
+            height: 300px;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+        <div>box-1</div>
+        <div>box-2</div>
+        <div>box-3</div>
+        <div>box-4</div>
+        <div>box-5</div>
+        <!-- <div>box-5</div>
+        <div>box-6</div>
+        <div>box-7</div>
+        <div>box-8</div>    -->
+    </div>
+</body>
+</html>
