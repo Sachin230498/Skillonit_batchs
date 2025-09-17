@@ -2,7 +2,7 @@
 
 // Fetch  => fetch provides a js interface for making HTTP request and processing the response
 
-// API => Application programing interface, is a set of rules and protocols thats define how diffrent software and app communicate . 
+// API => Application programing interface, is a set of rules and protocols thats define how diffrent software and app communicate .
 
 // CRUD operation
 
@@ -29,9 +29,6 @@
 //        })
 // })
 
-
-
-
 // let promise = new Promise(function(res,rej){
 //         if(5==6){
 //             res("Condition true")
@@ -49,14 +46,9 @@
 
 // console.log(promise)
 
-
-
-
 // let api = "https://fakestoreapi.com/products";
 
-
 // let getData = fetch("https://fakestoreapi.com/products");
-
 
 // console.log(getData)
 
@@ -70,32 +62,41 @@
 //     console.log(err)
 // })
 
-
 // async await
-let main = document.getElementById("main")
-let api = "https://fakestoreapi.com/products";
+// let main = document.getElementById("main")
+// let api = "https://fakestoreapi.com/products";
 
-async function getData(){
-   let res = await fetch(api)
-//    res.then(function(res){
-//    })
-let data = await res.json()
-// console.log(data)
+// async function getData(){
+//    let res = await fetch(api)
+// //    res.then(function(res){
+// //    })
+// let data = await res.json()
+// // console.log(data)
 
-data.map(({title,price,image})=>{
-//    console.log(el)
-   let name = document.createElement("h2")
-   name.innerText = title;
-   let p = document.createElement("h3")
-   p.innerText = price
-   let img = document.createElement("img")
-   img.src = image
-   let div = document.createElement("div")
+// data.map(({title,price,image})=>{
+// //    console.log(el)
+//    let name = document.createElement("h2")
+//    name.innerText = title;
+//    let p = document.createElement("h3")
+//    p.innerText = price
+//    let img = document.createElement("img")
+//    img.src = image
+//    let div = document.createElement("div")
 
-   div.append(img,name,p)
-   main.append(div)
+//    div.append(img,name,p)
+//    main.append(div)
 
-})
-}
+// })
+// }
 
 // getData()
+
+let api = "https://fakestoreapi.com/products";
+
+const getData =async() => {
+  let res = await fetch(api);
+  let data =await res.json()
+  console.log(data)
+};
+
+getData();

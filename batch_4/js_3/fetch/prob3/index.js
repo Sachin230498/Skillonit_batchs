@@ -1,14 +1,15 @@
 let main = document.getElementById("main")
 let filprice = document.querySelector("select")
+let input = document.querySelector("input")
 
 let api = "https://dummyjson.com/products";
 let realData;
 
 const getData = async()=>{
- let res =   await fetch(api)
+ let res = await fetch(api)
 //    console.log(await res.json())
 let data = await res.json()
-console.log(data.products)
+// console.log(data.products)
 realData = data.products;
 display(realData)
 
@@ -67,6 +68,19 @@ if (filprice.value == "lth"){
 display(realData)
 }
 
+
+input.addEventListener("input", ()=>{
+  // console.log(input.value)
+  let x =  event.target.value.toLowerCase()
+  
+  const filtered = realData.filter((data)=>{
+         return data.title.toLowerCase().includes(x) 
+     
+  })
+
+display(filtered)
+
+})
 
 
 
