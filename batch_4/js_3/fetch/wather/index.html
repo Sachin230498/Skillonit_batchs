@@ -1,11 +1,29 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Weather App</h1>
-</body>
-<script src="index.js"></script>
+    <style>
+        iframe{
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Weather app</h1>
+
+    <input type="text" placeholder="Enter City Name" />
+    <button onclick="getData()">Search</button>
+
+    <br /><br />
+
+    <div id="main"></div>
+
+    <br /><br />
+
+ 
+
+  </body>
+  <script src="./index.js"></script>
 </html>

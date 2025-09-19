@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Template Literal</h1>
+  </body>
+  <script>
+    // let a = "hello"
+    // let b= 5
+    // // let x = 6
+    // let name = "Rohan"
+
+    // console.log("how",b ,"are you")
+    //    console.log( `${a} How are ${b} you , I am fine, ${name}`)
+
+    // let x = ["Hello", 22,55,12,75,true]
+
+    // const [a,b,c,d,e,f] = x
+
+    // console.log(a,b)
+
+    let new_obj = {
+      name: "Rohan",
+      age: 22,
+      hobbies: ["Riding", "Reading", "Biking"],
+      loc: "US",
+      marks: {
+        eng: 88,
+        phy: 92,
+        maths: 96,
+      },
+    };
+
+    const {
+      name,
+      age,
+      hobbies: [a, b, c],
+      loc,
+      marks: { eng, phy, maths },
+    } = new_obj;
+    console.log(maths);
+  </script>
+</html>
