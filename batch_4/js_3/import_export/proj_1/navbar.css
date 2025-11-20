@@ -1,0 +1,11 @@
+  ul{
+            display: flex;
+            justify-content: space-between;
+           font-size: 25px;
+           border: 2px solid;
+           padding: 20px;  
+        }
+
+        a{
+            text-decoration: none;
+        }

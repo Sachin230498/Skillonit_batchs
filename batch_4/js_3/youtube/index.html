@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+
+        #container>div{
+            border: 2px solid;
+        }
+
+        #container>div>iframe{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Youtube clone</h1>
+
+    <input type="text" placeholder="Serach for content">
+    <button onclick="getData()">Search</button>
+
+
+    <div id="container"></div>
+    <!-- <iframe src="https://www.youtube.com/embed/2cyzCReoNgU?si=p1RqDUM_QJ8iHckQ"  frameborder="0"></iframe> -->
+</body>
+<script src="./index.js"></script>
+</html>
