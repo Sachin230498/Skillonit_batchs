@@ -1,6 +1,8 @@
 import fs from "fs";
 
 
+// async
+
 fs.readFile("data.txt","utf-8",(err,data)=>{
    if(err){
     console.log(err)
@@ -9,6 +11,9 @@ fs.readFile("data.txt","utf-8",(err,data)=>{
    }
 } )
 
+
+// sync
+fs.readFileSync("data.txt", "utf-8")
 
 
 fs.writeFile("note.txt","Hello Rahul", (err)=>{
