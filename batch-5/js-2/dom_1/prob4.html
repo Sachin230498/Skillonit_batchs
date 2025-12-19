@@ -1,0 +1,52 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="name" type="text" placeholder="enter your name" />
+    <br /><br />
+    <input
+      id="mobile"
+      type="number"
+      placeholder="enter your mobile"
+    /><br /><br />
+    <select id="gender">
+      3+
+      <option value="select">Select</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+    <br /><br />
+
+    <button onclick="getData()">submit</button>
+
+    <hr />
+    <hr />
+
+    <h1 id="get"></h1>
+    <h1 id="get2"></h1>
+    <h1 id="get3"></h1>
+  </body>
+  <script>
+    let n = document.getElementById("name");
+    let m = document.getElementById("mobile");
+    let head = document.getElementById("get");
+    let head2 = document.getElementById("get2");
+    let head3 = document.getElementById("get3");
+    let gender = document.getElementById("gender");
+    let c = document.getElementById("check");
+
+    function getData() {
+      // console.log("hello")
+      // console.log(n.value, m.value)
+
+      head.innerText = n.value;
+      head2.innerText = m.value;
+      head3.innerText = gender.value;
+      console.log(c.value);
+    }
+  </script>
+</html>

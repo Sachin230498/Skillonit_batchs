@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+    <h1>Hello</h1>
+</body>
+<script>
+
+let head = document.querySelector("h1")
+
+head.addEventListener("mouseover", changecolor)
+head.addEventListener("mouseleave", normalcolor)
+
+function changecolor(){
+    head.style.color = "red"
+}
+function normalcolor(){
+    head.style.color = "black"
+}
+
+
+  
+
+    //  let btn = document.getElementsByTagName("button")
+//     let btn = document.querySelector("button")
+//     let select = document.querySelector("select")
+//     // console.log(select)
+
+//    select.addEventListener("change",getvalue)
+
+//    function getvalue(){
+//     console.log(select.value)
+//    }
+
+
+
+
+//     btn.addEventListener("click",fun1)
+
+//   function fun1(){
+//         alert("hello")
+//     }
+
+</script>
+</html>

@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label>Enter Your Name</label><br />
+      <input id="name" type="text" placeholder="enter your name" />
+      <br /><br />
+      <label>Enter Your Password</label><br />
+      <input id="pass" type="password" placeholder="enter your password" />
+      <br /><br />
+      <input type="submit" />
+    </form>
+
+    <hr />
+    <hr />
+
+    <div id="main"></div>
+  </body>
+  <script>
+    let form = document.querySelector("form");
+    let name = document.getElementById("name");
+    let password = document.getElementById("pass");
+    let main = document.getElementById("main");
+    // console.log(form)
+
+    form.addEventListener("submit", getData);
+
+    function getData() {
+      event.preventDefault();
+      // console.log("Hello")
+      console.log(name.value);
+      console.log(password.value);
+    }
+  </script>
+</html>

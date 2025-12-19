@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="heading" id="head">Hello</h1>
+    <h2 class="heading">Hello 2</h2>
+    <h3 class="heading">Hello 3</h3>
+    <h4 class="heading">Hello 4</h4>
+    <h2 class="heading">Hello 5</h2>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi sint
+      veniam natus odit architecto dicta magnam voluptatum libero ratione
+      voluptatem quidem, dolores aspernatur at? Nisi neque quidem suscipit
+      eligendi aspernatur.
+    </p>
+  </body>
+  <script>
+    // let a = document.getElementsByTagName("h1")
+    // console.log(a[0])
+
+    // let a = document.getElementById("head");
+    // a.style.color = "red";
+    // console.log(a)
+
+    let a = document.getElementsByClassName("heading")
+    // a[0].style.color = "blue"
+
+    for(let i=0;i<a.length;i++){
+        // console.log(a[i].innerText)
+        a[i].style.color = "blue"
+    }
+
+    // console.log(a[0].innerText)
+    // console.log(a[1].innerText)
+    // console.log(a[2].innerText)
+    // console.log(a[3].innerText)
+    // console.log(a[4].innerText)
+  </script>
+</html>

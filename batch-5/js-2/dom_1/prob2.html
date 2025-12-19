@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">Hello</h1>
+    <button onclick="changefun()">Change</button>
+    <button onclick="undo()">
+        <a href="" target="_blank">uhoi</a>
+    </button>
+</body>
+<script>
+     
+     let head = document.getElementById("head")
+    //  console.log(head.innerText)
+
+    function changefun(){
+        head.innerText = "bye-bye"
+    }
+
+
+    function undo(){
+        head.innerText = "Hello"
+    }
+
+</script>
+</html>
