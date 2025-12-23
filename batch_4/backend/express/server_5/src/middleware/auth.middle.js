@@ -6,7 +6,8 @@ const verify = (req,res,next)=>{
     if(!token) return res.status(401).json({massage:"Login required"})
 
     try {
-        const decoded = jwt.verify(token, process.env.secretkey);   
+        const decoded = jwt.verify(token, process.env.secretkey); 
+        console.log(decoded)  
         req.user = decoded;
         next()
     } catch (error) {

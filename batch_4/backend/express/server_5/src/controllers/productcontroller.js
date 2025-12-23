@@ -2,8 +2,29 @@ import productModel from "../models/ProductModel.js";
 
 const getProduct = async(req,res)=>{
    try {
-    const product = await productModel.find()
-    res.status(200).send(product)
+    const {page=1,limit=5,search=""} = req.query;
+
+    // $regex is a mongodb operator used for searching text patterns inside strings
+
+    const query = {
+      title: { $regex: search , $options:"i"},
+    };
+
+    const product = await productModel.find(query).skip((page-1)*limit).limit(Number(limit))
+
+    const totle = await productModel.countDocuments(query)
+
+    // Mob  m
+    // ob 
+    // const product = await productModel.countDocuments()
+
+
+    res.status(200).json({
+        totle,
+        page:Number(page),
+        pages:Math.ceil(totle/limit),
+        product
+    })
    } catch (error) {
    res.status(500).send(error)
    }
@@ -18,6 +39,9 @@ const postProduct = async(req,res)=>{
         res.status(500).send(error);
     }
 }
+
+
+
 
 
 export {getProduct,postProduct};

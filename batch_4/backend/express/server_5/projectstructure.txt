@@ -7,3 +7,27 @@ Admin - CRUD on user
         CRUD on product
 
 Role-based route protection
+
+
+
+Modules 
+user Modules
+core/builtin Modules => os,fs,crypto,http
+third party models => express
+
+express ? what why how
+express vs http 
+folder structure
+mongodb ? 
+nosql vs sql 
+mongodb query and aggrigation
+mongo CRUD
+mongoose
+bcrypt ?
+dotenv ?
+jsonwebtoken,
+auth 
+role base models
+middleware 
+system design
+

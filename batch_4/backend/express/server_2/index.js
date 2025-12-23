@@ -1,5 +1,6 @@
 import express from "express";
 import fs from "fs";
+import middleware from "./middle.js";
 
 const app = express();
 let PORT = 3050;
@@ -73,6 +74,13 @@ app.get("/abc/:id", (req, res) => {
 app.get("/", (req, res) => {
   res.send("hello , welcome to our server");
 });
+
+
+app.get("/data",middleware, (req, res) => {
+  res.send("hello , welcome to our data");
+});
+
+
 
 app.listen(PORT, () => {
   console.log(`server is running http://localhost:${PORT}`);

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .container{
+        border: 4px solid;
+       }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+
+
+</body>
+<script>
+    let main = document.getElementById("main")
+
+    // let name = ["Aakash","Raj", "Gaurav", "Sahil", "Pankaj","Rahul"]
+    // let rank = [2,1,5,7,3,4]
+    // let color = ["red","green","orange","yellow","blue","pink"]
+
+ let data =   [
+  { name: "Aakash", rank: 2, color: "red" },
+  { name: "Raj", rank: 1, color: "green" },
+  { name: "Gaurav", rank: 5, color: "orange" },
+  { name: "Sahil", rank: 7, color: "yellow" },
+  { name: "Pankaj", rank: 3, color: "blue" },
+  { name: "Rahul", rank: 4, color: "pink" }
+]
+
+
+
+
+    for(let i=0;i<data.length;i++){
+      let name = document.createElement("h1")
+      let rank =document.createElement("p")
+      let div = document.createElement("div")
+      div.style.backgroundColor = data[i].color
+      name.innerText = data[i].name
+      rank.innerText = data[i].rank
+
+      div.append(name,rank)
+      main.append(div)
+    }
+
+</script>
+</html>

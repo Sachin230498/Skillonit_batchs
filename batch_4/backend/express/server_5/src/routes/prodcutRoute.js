@@ -6,7 +6,7 @@ import checkrole from "../middleware/role.middleware.js";
 const productrouter = express.Router();
 
 
-productrouter.get("/getdata",loginverify,getProduct )
-productrouter.post("/postdata",checkrole("admin"), postProduct )
+productrouter.get("/getdata",getProduct )
+productrouter.post("/postdata",loginverify,checkrole("admin"), postProduct )
 
 export default productrouter;

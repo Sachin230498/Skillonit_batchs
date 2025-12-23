@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .container{
+        border: 4px solid;
+       }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+
+
+</body>
+<script>
+    let main = document.getElementById("main")
+
+    let name = ["Aakash","Raj", "Gaurav", "Sahil", "Pankaj","Rahul"]
+    let rank = [2,1,5,7,3,4]
+    let color = ["red","green","orange","yellow","blue","pink"]
+
+   
+
+
+    for(let i=0;i<name.length;i++){
+    let head =  document.createElement("h1")  
+    head.innerText = name[i];
+    let head2 =  document.createElement("h2")
+    head2.innerText = rank[i];
+    let a = document.createElement("a")
+    a.setAttribute("href", "https://technology-temple-backend.onrender.com/")
+    a.innerText = "click"
+    let div = document.createElement("div")
+    div.setAttribute("class","container")
+    div.style.backgroundColor = color[i]
+   
+    div.append(head,head2,a)
+    main.append(div)
+    }
+
+</script>
+</html>
