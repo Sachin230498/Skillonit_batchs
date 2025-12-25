@@ -31,3 +31,11 @@ role base models
 middleware 
 system design
 
+
+
+Multer => Multer is a middleware used in express to handle multipart/form-data (files uploads)
+
+
+Frontend - formdata - multer - server - save - db
+
+

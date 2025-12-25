@@ -1,4 +1,5 @@
 import productModel from "../models/ProductModel.js";
+// import sendMail from "../utils/mailer.js"
 
 const getProduct = async(req,res)=>{
    try {
@@ -30,11 +31,32 @@ const getProduct = async(req,res)=>{
    }
 }
 
+ 
 const postProduct = async(req,res)=>{
     try {
-        
-        const product = await productModel.create(req.body)
-        res.status(201).json({massage:"Product added",product})
+      const { title, price } = req.body;
+
+    
+      const images = req.files.map(
+        (file) => `uploads/products/${file.filename}`
+      );
+
+      const product = await productModel.create({
+        title,
+        price,
+        images: images,
+      });
+
+      // await sendMail({
+      //     to:"sachinpathe230498@gmail.com",
+      //     subject:"New Product Added",
+      //     html: `<h2>New Product Added</h2>
+      //            <p><b>Name:</b> ${product.title}</p>
+      //            <p><b>Price:</b> ${product.price}</p>
+      //        `
+      // })
+
+      res.status(201).json({ massage: "Product added", product });
     } catch (error) {
         res.status(500).send(error);
     }

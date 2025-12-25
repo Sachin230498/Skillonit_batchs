@@ -1,24 +1,17 @@
 import express from "express";
-import { register, login,getAllUser } from "../controllers/authController.js";
+import { register, login, getAllUser } from "../controllers/authController.js";
 import loginverify from "../middleware/auth.middle.js";
 import checkrole from "../middleware/role.middleware.js";
-
+import upload from "../middleware/userUpload.middleware.js";
 
 const userrouter = express.Router();
 
-userrouter.post("/register",register)
-userrouter.post("/login",login)
-userrouter.get("/getall",loginverify,checkrole("admin"), getAllUser)
+userrouter.post("/register", upload.single("profile"), register);
+
+userrouter.post("/login", login);
+userrouter.get("/getall", loginverify, checkrole("admin"), getAllUser);
 
 export default userrouter;
-
-
-
-
-
-
-
-
 
 // console.log("hello-1")
 // console.log("hello-2")
@@ -29,13 +22,10 @@ export default userrouter;
 // Promise.resolve("hello-5")
 // console.log("hello-4")
 
-
 // call stack => 1 2 4
 
-// web api => 
+// web api =>
 
 // queue => microtask , macrotask => callback
 
 // event loop => montior
-
-
