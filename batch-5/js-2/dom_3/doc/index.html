@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-app</title>
+   <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <!-- Dont make any changes here -->
+    <h1>Hospital</h1>
+
+    <div>
+      <!-- ***** We are using form here  ****  -->
+      <form >
+        <label >Doctor Name</label><br />
+        <input id="docname" type="text" placeholder="Enter Task Name" /><br />
+        <label >Doctor ID</label><br />
+        <input id="docid" type="text" placeholder="Enter Task Name" /><br />
+        <label >Specialization </label><br />
+        <select id="specialization">
+          <option value="">Select Specialization</option>
+          <option value="covid">Covid</option>
+          <option value="derma">Derma</option>
+          <option value="gyno">Gyno</option>
+          <option value="Dentist">Dentist</option>
+        </select><br />
+        <label for="">Expreince</label><br>
+        <input id="expreince" type="number" placeholder="enter expreince"><br>
+        <label for="">Email</label><br>
+        <input id="email" type="email" placeholder="enter email"><br>
+        <label for="">Mobile</label>
+    <br>
+        <input id="mobile" type="number" placeholder="enter mobile"><br>
+        
+        <input type="submit" />
+      </form>
+      
+      <table>
+        <!-- Dont change order of columns -->
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Doctor Id</th>
+            <th>Specialization</th>
+            <th>Exp in year</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Role</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script src="./index.js"></script>
