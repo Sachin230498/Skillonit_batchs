@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Auth</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  input, button { margin: 5px 0; padding: 10px; width: 200px; }
+  button { cursor: pointer; }
+</style>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+<h2>Signup</h2>
+<input type="text" id="signupName" placeholder="Name"><br>
+<input type="email" id="signupEmail" placeholder="Email"><br>
+<input type="password" id="signupPassword" placeholder="Password"><br>
+<button onclick="signup()">Signup</button>
+
+<h2>Login</h2>
+<input type="email" id="loginEmail" placeholder="Email"><br>
+<input type="password" id="loginPassword" placeholder="Password"><br>
+<button onclick="login()">Login</button>
+
+<h2>Google Login</h2>
+<div id="g_id_onload"
+     data-client_id="941109627476-8erithm9i75t65povnjutkh4qj798dnk.apps.googleusercontent.com"
+     data-callback="handleGoogleResponse">
+</div>
+<div class="g_id_signin"></div>
+
+<script>
+async function signup() {
+    const name = document.getElementById('signupName').value;
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+
+    const res = await fetch('http://localhost:5000/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password })
+    });
+    const data = await res.json();
+    console.log(data);
+}
+
+async function login() {
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    const res = await fetch('http://localhost:5000/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    console.log(data);
+}
+
+async function handleGoogleResponse(response) {
+    console.log('Google Response', response);
+    const res = await fetch('http://localhost:5000/auth/google', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: response.credential })
+    });
+    const data = await res.json();
+    console.log('Logged in user', data);
+}
+</script>
+
+</body>
+</html>

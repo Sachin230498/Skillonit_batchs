@@ -1,0 +1,1 @@
+Prop drilling is passing data from a parents components to a deeply nested child component through mulitple intermediate components - even if those components donts need the data
