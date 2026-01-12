@@ -1,0 +1,17 @@
+React Router Dom is used to create multiple pages in React Application without reloading the page
+
+react is SPA
+page dosnt reload
+only component change
+
+
+React Router Dom
+
+BrowserRouter    - Enbles routing
+Routes   - Wrapper for all Route
+Route    - Define path + component
+Link     - Navigation without reload
+useParams - read url params
+useNavigation  - Redirect with program
+
+
