@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSON - JS Object Notation</h1>
+</body>
+<script>
+    // syntex
+    
+    // let jsonobj = {
+    //     "name":"Rahul",
+    //     "age":22
+    // }
+
+    // let obj = {
+    //     name:"Rahul",
+    //     age:22
+    // }
+
+    // JSON.stringify()
+    // JSON.parse()
+
+//     let a = 10;
+//   let str = "Hello"
+//   console.log(typeof str)
+//     console.log(typeof obj)
+//     console.log(typeof a)
+
+
+    // let a = 55;
+    // let x =  JSON.stringify(a)
+    // console.log(typeof x)
+    // console.log(typeof a)
+
+
+    // let arr = [12,4,5,896,13]
+    // console.log(arr)
+
+    // let x = JSON.stringify(arr)
+    // console.log(x)  // "[12,4,5,896,13]"
+
+
+    // let y = JSON.parse(x)
+    // console.log(y)
+
+
+    // localStorage.setItem("a","hello")
+    //  localStorage.setItem("num",123456)
+    // console.log(typeof localStorage.getItem("num"))
+
+//    let a = ["hello", "how", "what", 12,45]
+//     let b = JSON.stringify(a)
+
+//    localStorage.setItem("arr", b)   
+
+//    let x = localStorage.getItem("arr")
+
+//    console.log( JSON.parse(x)  )
+
+let arr = [1,7,8,91,56,2]
+localStorage.setItem("array", JSON.stringify(arr))
+let x = JSON.parse( localStorage.getItem("array"))
+console.log(x)
+
+
+</script>
+</html>

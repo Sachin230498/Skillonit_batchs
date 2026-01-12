@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Local Storage</h1>
+
+    <form>
+        <input id="name" type="text" placeholder="enter name">
+        <br>
+        <input id="password" type="password" placeholder="enter password" >
+        <br>
+        <input type="submit">
+    </form>
+
+    <br><br>
+
+    <div id="main">
+
+    </div>
+</body>
+<script>
+
+let form = document.querySelector("form")
+let name = document.getElementById("name")
+let password = document.getElementById("password")
+let main  = document.getElementById("main")
+
+
+let arr = JSON.parse(localStorage.getItem("arr")) || [] ;
+display(arr)
+form.addEventListener("submit",function(){
+    event.preventDefault()
+    
+    let obj = {
+        n:name.value,
+        p:password.value
+    }
+
+    arr.push(obj)
+    localStorage.setItem("arr",JSON.stringify(arr))
+    display(arr)
+})
+
+
+function display(data){
+    main.innerHTML = "";
+    data.map(function(el){
+        let name = document.createElement("h1")
+        name.innerText = el.n
+        let password = document.createElement("h2")
+        password.innerText = el.p
+
+        let div = document.createElement("div")
+        div.style.border = "2px solid red",
+
+        div.append(name,password)
+        main.append(div)
+    })
+}
+
+// localStorage.setItem(key ,value)
+// localStorage.getItem(key)
+// localStorage.removeItem(key)
+// localStorage.clear()
+
+
+</script>
+</html>

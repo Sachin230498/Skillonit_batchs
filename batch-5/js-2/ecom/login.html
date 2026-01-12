@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">MyLogo</div>
+      <a class="logo" href="./index.html">Home</a>
+      <div class="nav-buttons">
+        <a href="/login.html" class="btn login-btn">Login</a>
+        <a href="/signup.html" class="btn signup-btn">Signup</a>
+      </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="login-container">
+      <h2>Login</h2>
+
+      <form>
+        <div class="input-group">
+          <label>Email</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <button type="submit">Login</button>
+
+        <p class="text">Don't have an account? <a href="#">Sign up</a></p>
+      </form>
+    </div>
+  </body>
+  <script>
+    let form = document.querySelector("form");
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+    let signup_data = JSON.parse(localStorage.getItem("signupData"));
+
+    form.addEventListener("submit", loginfun);
+
+    function loginfun() {
+      event.preventDefault();
+
+      let login_obj = {
+        email: email.value,
+        password: password.value,
+      };
+
+      let isFlag = false;
+
+      for (let i = 0; i < signup_data.length; i++) {
+        if (signup_data[i].email == login_obj.email) {
+          if (signup_data[i].password == login_obj.password) {
+            isFlag = true;
+            localStorage.setItem("loginData", signup_data[i].name)
+          }else{
+            isFlag = "wrong"
+          }
+        }
+      }
+
+      if (isFlag == true) {
+        alert("login");
+         window.location.href = "index.html"
+      }else if(isFlag == "wrong"){
+        alert("worng password")
+      }
+      else {
+        alert("login failed");
+      }
+    }
+  </script>
+</html>
