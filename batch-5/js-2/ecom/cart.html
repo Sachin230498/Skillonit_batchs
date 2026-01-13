@@ -30,7 +30,7 @@
 
 
 
-    <h1>Home Page</h1>
+    <h1>Cart Page</h1>
 </body>
 <script>
 
@@ -46,11 +46,6 @@ if(username!=null){
   let user = document.createElement("h2")
   user.innerText = username;
 
-  let cartbtn = document.createElement("button")
-  cartbtn.addEventListener("click",function(){
-     window.location.href = "cart.html"
-  })
-  cartbtn.innerText = "Cart"
 
   let logoutbtn = document.createElement("button")
   logoutbtn.innerText = "Logout"
@@ -61,7 +56,7 @@ if(username!=null){
 
   user.style.color = "white"
 
-   navbuttons.append(cartbtn,user,logoutbtn)
+   navbuttons.append(user,logoutbtn)
 
 }
 
