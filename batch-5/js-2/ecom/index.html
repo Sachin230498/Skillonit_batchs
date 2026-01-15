@@ -4,18 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    <style>
-        #navbtn{
-          
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            align-items: center;
-            gap: 20px;
-
-        }
-
-      
-    </style>
+   
 </head>
 <body>
       <!-- Navbar -->
@@ -29,16 +18,17 @@
     </nav>
 
 
-
-    <h1>Home Page</h1>
+<div id="main"></div>
 </body>
-<script>
 
+<script>
 let username = localStorage.getItem("loginData")
 let navbuttons = document.getElementById("navbtn")
-// console.log(username)
-
-// console.log(!username)
+let main = document.getElementById("main")
+let lsdata = JSON.parse( localStorage.getItem("data"))
+let cartArr = JSON.parse(localStorage.getItem("cartArr")) || [];
+// console.log(lsdata)
+display(lsdata)
 
 if(username!=null){
   navbuttons.innerHTML = "";
@@ -66,5 +56,41 @@ if(username!=null){
 }
 
 
+function display(data){
+data.map(function(el,index){
+    // console.log(el)
+
+    let title = document.createElement("h1")
+    title.innerText = el.title;
+    let price = document.createElement("h2")
+    price.innerText = el.price;
+    let image = document.createElement("img")
+    image.src = el.image
+    let cartbtn = document.createElement("button")
+    cartbtn.style.backgroundColor = "red"
+    cartbtn.innerText = "Add to Cart"
+    cartbtn.addEventListener("click", function(){
+        addcart(el)
+    })
+
+
+    let div = document.createElement("div")
+    div.append(image,title,price,cartbtn)
+    main.append(div)
+
+})
+}
+
+
+
+function addcart(singledata){
+   cartArr.push(singledata)
+
+//    console.log(cartArr)
+localStorage.setItem("cartArr" , JSON.stringify(cartArr));
+}
+
 </script>
+
+<script src="./data.js"></script>
 </html>

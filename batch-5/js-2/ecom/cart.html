@@ -30,13 +30,15 @@
 
 
 
-    <h1>Cart Page</h1>
+ <div id="main"></div>
 </body>
 <script>
 
 let username = localStorage.getItem("loginData")
 let navbuttons = document.getElementById("navbtn")
+let cartArr = JSON.parse(localStorage.getItem("cartArr"))
 // console.log(username)
+display(cartArr)
 
 // console.log(!username)
 
@@ -55,10 +57,29 @@ if(username!=null){
   })
 
   user.style.color = "white"
-
    navbuttons.append(user,logoutbtn)
 
 }
+
+function display(data){
+data.map(function(el,index){
+    // console.log(el)
+
+    let title = document.createElement("h1")
+    title.innerText = el.title;
+    let price = document.createElement("h2")
+    price.innerText = el.price;
+    let image = document.createElement("img")
+    image.src = el.image
+   
+
+    let div = document.createElement("div")
+    div.append(image,title,price)
+    main.append(div)
+
+})
+}
+
 
 
 </script>
