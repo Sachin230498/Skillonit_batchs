@@ -1,41 +1,40 @@
 import React, {useState} from 'react'
 
-const AddExpenses = ({ expenses, setExpenses }) => {
+const ExpenseForm = ({onAddExpense}) => {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState(0);
 
+  const submitHandler = () => {
+    const expenseData = {
+      id: Date.now(),
+      title,
+      amount,
+    };
 
-  const addExpense = ()=>{
-   setExpenses([
-    ...expenses,{title,amount}
-   ])
+    onAddExpense(expenseData)
 
-   setTitle("")
-   setAmount(0)
-  }
+    setTitle("");
+    setAmount(0);
+  };
 
   return (
     <div>
-      <h1>Add Expense</h1>
-
-      {/* <h2>{expenses.title}</h2>
-      <h2>{expenses.amount}</h2> */}
-
       <input
         type="text"
-        placeholder="Title"
+        placeholder="Expense Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
       <input
         type="number"
-        placeholder="amount"
+        placeholder="Amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
-      <button onClick={addExpense}>Add</button>
+
+      <button onClick={submitHandler}>Add Expense</button>
     </div>
   );
 };
 
-export default AddExpenses
+export default ExpenseForm

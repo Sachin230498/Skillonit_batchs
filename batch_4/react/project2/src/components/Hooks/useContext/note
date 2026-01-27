@@ -1,0 +1,52 @@
+prop drilling
+App -> parent -> child -> grandchild
+
+too many props
+
+Context api allows us to share data globally without passing props manually.
+
+
+when to use Context api
+use it for 
+
+login user data
+theme language
+cart count
+authentication
+
+
+
+how Context API works
+
+Create Context
+Provide data
+Use data
+
+
+step - 1 
+
+import {createContext} from "react"
+
+export const UserContext = createContext()
+
+
+step -2 
+
+import {UserContext} from "./UserContext"
+
+<UserContext.Provider value = {user}>
+<App/>
+</UserContext.Provider>
+
+
+value = data you want to share
+
+
+step - 3
+
+import {UseContext} from "react"
+import {UserContext} from "./UserContext"
+
+const user = UseContext(UserContext)
+
+

@@ -1,42 +1,48 @@
-import { useEffect, useState } from 'react'
-import {Routes,Route,Link} from "react-router-dom" 
-import Dashboard from './components/Dashboard'
-import AddExpenses from './components/AddExpenses'
-import ExpenseList from './components/ExpenseList'
+import React,{useEffect, useState} from 'react';
+import ExpenseForm from './components/ExpenseForm';
+import ExpenseList from './components/ExpenseList';
 
-function App() {
-  const [expenses,setExpenses] = useState([])
+const App = () => {
+ const [expenses,setExpenses] = useState([]);
 
-  useEffect(()=>{
-    const saved = JSON.parse(localStorage.getItem("expenses"))
-  },[])
+ //load data from ls
+ useEffect(()=>{
+ const saveData = JSON.parse(localStorage.getItem("expenses"));
+ if (saveData) {
+   setExpenses(saveData);
+ }
 
-  useEffect(()=>{
-    localStorage.setItem("expenses", JSON.stringify(expenses))
-  },[expenses])
+ },[]);
 
+
+//  save data to localstorage
+useEffect(()=>{
+  localStorage.setItem("expenses", JSON.stringify(expenses))
+},[expenses])
+
+//Add new Expense
+const addExpense = (data)=>{
+setExpenses([...expenses, data])
+}
+
+
+let total = 0;
+
+for(let i=0;i<expenses.length;i++){
+   total = total +  Number( expenses[i].amount ) // t = 0  + 100 , 0100+200 = 0100200
+}
 
 
   return (
-    <>
-      <nav>
-        <Link to="/">Dashboard</Link>
-        <Link to="/add">Add</Link>
-        <Link to="/list">List</Link>
-      </nav>
+    <div>
 
-      <Routes>
-        <Route path="/" element={<Dashboard expenses={expenses} />} />
-        <Route
-          path="/add"
-          element={
-            <AddExpenses expenses={expenses} setExpenses={setExpenses} />
-          }
-        />
-        <Route path="/list" element={<ExpenseList expenses={expenses} />} />
-      </Routes>
-    </>
-  );
+     <h1>Expense Tracker</h1>
+     <ExpenseForm onAddExpense = {addExpense}/>
+     <h2>Total : {total} </h2>
+     <ExpenseList expenses = {expenses}/>
+
+    </div>
+  )
 }
 
 export default App

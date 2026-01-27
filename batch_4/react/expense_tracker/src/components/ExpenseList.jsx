@@ -1,17 +1,14 @@
 import React from 'react'
 
 const ExpenseList = ({ expenses }) => {
-  return (
-    <div>
-      <h1>All Expenses</h1>
+  return <ul>
+    {expenses.map((el)=>(
 
-      {expenses.map((exp,index)=>(
-        <div>
-            <span>{exp.title}</span> - RS{exp.amount}
-        </div>
-      ))}
-    </div>
-  );
+      <li key={el.id} >{el.title} - {el.amount}</li>
+      
+    ))
+    }
+  </ul>;
 };
 
 export default ExpenseList
