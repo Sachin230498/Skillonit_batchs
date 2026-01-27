@@ -26,7 +26,7 @@ let username = localStorage.getItem("loginData")
 let navbuttons = document.getElementById("navbtn")
 let main = document.getElementById("main")
 let lsdata = JSON.parse( localStorage.getItem("data"))
-let cartArr = JSON.parse(localStorage.getItem("cartArr")) || [];
+let cartArr = JSON.parse(localStorage.getItem("cartData")) || [];
 // console.log(lsdata)
 display(lsdata)
 
@@ -69,11 +69,29 @@ data.map(function(el,index){
     let cartbtn = document.createElement("button")
     cartbtn.style.backgroundColor = "red"
     cartbtn.innerText = "Add to Cart"
-    cartbtn.addEventListener("click", function(){
-        addcart(el)
-    })
 
+   cartbtn.addEventListener("click",function (){
+    let alreadyInCart = false;
+    for(let i=0;i<cartArr.length;i++){
+        if(cartArr[i].id == el.id){
+            alreadyInCart = true;
+            break;
+        }
+    }
 
+    if(alreadyInCart){
+       window.location.href = "cart.html"
+    }else{
+      cartArr.push(el);
+      localStorage.setItem("cartData", JSON.stringify(cartArr));
+      alert("Product is added to cart")
+      cartbtn.innerText = "Go to Cart"
+    }
+
+   })
+
+      
+    
     let div = document.createElement("div")
     div.append(image,title,price,cartbtn)
     main.append(div)
@@ -83,12 +101,7 @@ data.map(function(el,index){
 
 
 
-function addcart(singledata){
-   cartArr.push(singledata)
 
-//    console.log(cartArr)
-localStorage.setItem("cartArr" , JSON.stringify(cartArr));
-}
 
 </script>
 

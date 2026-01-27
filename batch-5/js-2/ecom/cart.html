@@ -14,6 +14,14 @@
 
         }
 
+
+.cartdiv{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
       
     </style>
 </head>
@@ -36,8 +44,16 @@
 
 let username = localStorage.getItem("loginData")
 let navbuttons = document.getElementById("navbtn")
-let cartArr = JSON.parse(localStorage.getItem("cartArr"))
-// console.log(username)
+let cartArr = JSON.parse(localStorage.getItem("cartData"))
+
+cartArr.map(function(el){
+    if(!el.currentQuntity){
+        el.currentQuntity = 1
+    }
+})
+
+
+console.log(cartArr)
 display(cartArr)
 
 // console.log(!username)
@@ -68,18 +84,40 @@ data.map(function(el,index){
     let title = document.createElement("h1")
     title.innerText = el.title;
     let price = document.createElement("h2")
-    price.innerText = el.price;
+    price.innerText = Math.floor(el.price);
     let image = document.createElement("img")
     image.src = el.image
-   
+
+    let cdiv = document.createElement("div")
+    cdiv.setAttribute("class","cartdiv")
+
+
+    let plusbtn = document.createElement("button")
+    plusbtn.innerText = "+"
+    let minusbtn = document.createElement("button")
+    minusbtn.innerText = "-"
+    let quntity = document.createElement("h2")
+    quntity.innerText = el.currentQuntity
+    
+    cdiv.append(minusbtn,quntity,plusbtn)
 
     let div = document.createElement("div")
-    div.append(image,title,price)
+    div.append(image,title,price,cdiv )
     main.append(div)
 
 })
 }
 
+
+
+// let a = 10.55;
+
+// console.log( Math.floor(a) )
+
+
+// let obj = {}
+// obj.name = 11
+// console.log(obj)
 
 
 </script>
