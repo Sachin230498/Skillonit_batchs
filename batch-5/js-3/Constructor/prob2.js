@@ -1,6 +1,5 @@
 // Adding Methods in Constructor
 
-
 function Car(brand,model){
     this.brand = brand
     this.model = model
@@ -10,7 +9,7 @@ function Car(brand,model){
     }
 }
 
-
 let c1 = new Car("Toyota", "Furtuner")
+c1.start();
 
-c1.start()
+
