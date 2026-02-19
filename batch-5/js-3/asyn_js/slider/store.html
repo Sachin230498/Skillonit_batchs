@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Page</title>
+</head>
+<body>
+   
+    <h1>
+        <a href="./slider.html">Slider</a>
+    </h1>
+    <h1>
+        <a href="./store.html">Store</a>
+    </h1>
+
+
+    <br><br><br>
+
+
+    <input id="image" type="text" placeholder="enter image url">
+    <button>Save</button>
+</body>
+<script>
+    let image_input = document.getElementById("image")
+    let btn = document.querySelector("button")
+    let img_arr = JSON.parse(localStorage.getItem("imgarr")) || []
+
+    btn.addEventListener("click", saveimage)
+
+
+    function saveimage(){
+      img_arr.push(image_input.value)
+      localStorage.setItem("imgarr", JSON.stringify(img_arr))
+      image_input.value = ""
+      
+    }
+</script>
+</html>

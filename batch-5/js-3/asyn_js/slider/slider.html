@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Page</title>
+</head>
+<body>
+   
+    <h1>
+        <a href="./slider.html">Slider</a>
+    </h1>
+    <h1>
+        <a href="./store.html">Store</a>
+    </h1>
+
+
+    <div id="main"></div>
+
+    <button onclick="stop()">stop</button>
+    <button onclick="play()">play</button>
+
+</body>
+<script>
+     let img_arr = JSON.parse(localStorage.getItem("imgarr"))
+     let main = document.getElementById("main")
+  
+     let index = 0
+
+     function display(){
+        main.innerHTML = ""
+        let image = document.createElement("img")
+        image.src = img_arr[index];
+
+        if(index ==  (img_arr.length-1)){
+       index = 0;
+        }else{
+            index++
+        }
+       
+        main.append(image)
+
+     }
+
+
+   
+
+
+  let id =   setInterval(display,1000)
+
+
+
+
+
+    // function greet(){
+    //     console.log("hello")
+    // }
+
+
+
+// let id =  setInterval(greet,1000)
+
+
+function stop(){
+    clearInterval(id)
+}
+
+function play(){
+  setInterval(display,1000)
+}
+
+
+
+
+</script>
+</html>
