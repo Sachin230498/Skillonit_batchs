@@ -81,14 +81,5 @@ console.log("End")
 
 
 
-
-
-
-
-
-
-
-
-
 // LIFO last in first out , book rack
 // FIFO first in first out , movie tickit row
