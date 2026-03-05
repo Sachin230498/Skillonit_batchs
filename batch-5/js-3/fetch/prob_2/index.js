@@ -1,9 +1,6 @@
-
-
 // let api = "https://jsonplaceholder.typicode.com/albums/2/photos";
 
-
-// // async await 
+// // async await
 
 // const getData= async()=>{
 
@@ -15,17 +12,11 @@
 //         console.log(error)
 //     }
 
-  
-   
 // }
-
 
 // getData()
 
-
-
 // // let getData = fetch(api)
-
 
 // // getData.then((res)=>{
 // //    let data =  res.json()
@@ -37,54 +28,40 @@
 // // console.log(err)
 // // })
 
-
-
-
-
 let api = "https://jsonplaceholder.typicode.com/photos";
-let main = document.getElementById("main")
+let main = document.getElementById("main");
+let loader = document.getElementById("loader");
 
-const getData = async()=>{    
-    try {
-        let res = await fetch(api);
-        let data = await res.json();
-        display(data);
-        // console.log(data); 
+const getData = async () => {
+  try {
+    loader.style.display = "block"; 
+    let res = await fetch(api);
+    let data = await res.json();
 
-        
-    } catch (error) {
-        console.log(error)
-    }
-  
-}
+    display(data);
 
+    loader.style.display = "none"; 
+  } catch (error) {
+    console.log(error);
+  }
+};
 
+const display = (data) => {
+  data.map((el) => {
+    let img = document.createElement("img");
+    img.src = el.url;
 
+    let id = document.createElement("h2");
+    id.innerText = el.id;
 
+    let div = document.createElement("div");
 
-const display = (data)=>{
- data.map((el)=>{
-   console.log(el)
+    div.append(img, id);
 
-   let img = document.createElement("img")
-//    img.src = el.url
-   let id = document.createElement("h2")
-   id.innerText = el.id
-   let div = document.createElement("div")
+    main.append(div);
+  });
+};
 
-   div.append(img,id)
-
-   main.append(div)
- })
-
-}
-
-
-
-
-setTimeout(()=>{
-getData();
-},1000)
-
-
-
+setTimeout(() => {
+  getData();
+}, 1000);
